@@ -81,10 +81,10 @@ state = {
                     <div className="my-5">
       <input type="range" className="custom-range" id="customRange1" />
         <table>
- <td> <h3 align = "left" ><FontAwesomeIcon icon= {faFrown} size ="4x" /> </h3></td>
-          <td><h3 align = "middle" > </h3>  </td>
-          <td> <h3 align = "middle" > </h3> </td>
-          <td> <h3 align = "right" ><FontAwesomeIcon icon= {faSmileBeam} size ="4x" /></h3>  </td>
+ <td> <h3 align = "left" ><FontAwesomeIcon icon= {faFrown} size ="4x" /> </h4></td>
+          <td><h4 align = "middle" > </h4>  </td>
+          <td> <h4 align = "middle" > </h4> </td>
+          <td> <h4 align = "right" ><FontAwesomeIcon icon= {faSmileBeam} size ="4x" /></h4>  </td>
 </table>
 
     </div>
