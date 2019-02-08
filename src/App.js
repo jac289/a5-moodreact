@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import bob from "./bob";
 import cathy from "./cathy";
 import sam from "./sam";
+import placer from "./placer";
 import './App.css';
 import {faSmileBeam} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -40,10 +41,10 @@ class AppIt extends React.Component {
     return (
       <div>
         <Switch location={isApp ? this.previousLocation : location}>
-          <Route exact path="/" component={Home} />
-          <Route path="/" component={bob} />
-          <Route path="/gallery" component={cathy} />
-          <Route path = "/img" component= {bob}/>
+   <Route exact path="/" component={Home} />
+          <Route path="/chat" component={cathy} />
+          <Route path="/img/:id" component={Slider} />
+          <Route path ="/placer" component= {placer}/>
         </Switch>
         {isApp ? <Route path="/img/:id" component={App} /> : null}
       </div>
@@ -92,7 +93,7 @@ const Home = () => (
     <td ><Link to="./index.html"><h2> Slider </h2></Link></td> 
   </tr>
   <tr>
-   <td width = "100%"> <li> <button class ="button button4"> <Link to="chat"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Bob</Link></button></li></td>
+   <td width = "100%"> <li> <button class ="button button4"> <Link to="/chat"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Bob</Link></button></li></td>
  <td> </td> <td> </td>
     <td> <p align ="right"> 2/1/19 6:30 PM  </p> </td>
  </tr>
@@ -100,7 +101,7 @@ const Home = () => (
     <td>
 
 <li>
-<button class ="button button4"> <Link to="cathy"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span> Cathy</Link></button> </li></td> 
+<button class ="button button4"> <Link to="chat"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span> Cathy</Link></button> </li></td> 
 <td> </td> <td> </td>
 <td> <p align = "right"> 1/31/19 12:00 PM </p> </td> </tr> 
    <tr>
@@ -119,10 +120,10 @@ const Home = () => (
 
         
            <tr>
-          <td> <Link to="./index.html"><h3 align = "middle" ><FontAwesomeIcon icon= {faHome} size ="4x" /> </h3></Link></td>
-          <td><Link to="./index.html"><h3 align = "middle" > <FontAwesomeIcon icon= {faUserCircle} size ="4x" /> </h3> </Link> </td>
-          <td> <Link to="./index.html"><h3 align = "middle" ><FontAwesomeIcon icon= {faPlusSquare} size ="4x" /> </h3> </Link></td>
-          <td> <Link to="./index.html"><h3 align = "middle" ><FontAwesomeIcon icon= {faCog} size ="4x" /></h3></Link>  </td>
+          <td> <Link to="/placer"><h3 align = "middle" ><FontAwesomeIcon icon= {faHome} size ="4x" /> </h3></Link></td>
+          <td><Link to="./placer"><h3 align = "middle" > <FontAwesomeIcon icon= {faUserCircle} size ="4x" /> </h3> </Link> </td>
+          <td> <Link to="./placer"><h3 align = "middle" ><FontAwesomeIcon icon= {faPlusSquare} size ="4x" /> </h3> </Link></td>
+          <td> <Link to="./placer"><h3 align = "middle" ><FontAwesomeIcon icon= {faCog} size ="4x" /></h3></Link>  </td>
            </tr> 
           
 </table>
@@ -130,7 +131,7 @@ const Home = () => (
 </div>
 );
 
-const Gallery = () => (
+const Slider= () => (
   <div>
     {STUFF.map(i => (
       <Link
@@ -148,7 +149,7 @@ const Gallery = () => (
   </div>
 );
 
-const ImageView = ({ match }) => {
+const ImageView= ({ match }) => {
     const stuff = STUFF[parseInt(match.params.id, 10)];
   if (!stuff) {
     return <div> not found</div>;

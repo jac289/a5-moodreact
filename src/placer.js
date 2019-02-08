@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { render } from "react-dom";
 import Keyboard from "react-simple-keyboard";
@@ -53,25 +52,13 @@ state = {
 <div>
      
           <ul className="header">
-          <h1>Friend</h1>
+          <h1>PLACEHOLDER</h1>
           </ul>
       <div class="container">
-  <p>Hello. What's wrong!?</p>
+  <p>PLACEHOLDER!?</p>
   <span class="time-right">11:00</span>
 </div>
-<div>
-        <input
-          value={this.state.input}
-          placeholder={"Start checking up on your friend!"}
-          onChange={e => this.onChangeInput(e)}
-        />
-        <Keyboard
-          ref={r => (this.keyboard = r)}
-          layoutName={this.state.layoutName}
-          onChange={input => this.onChange(input)}
-          onKeyPress={button => this.onKeyPress(button)}
-        />
-      </div>
+
 </div>
 
       
