@@ -81,9 +81,9 @@ state = {
     </div>
   <table>
  <td> <h4 align = "left" ><FontAwesomeIcon icon= {faFrown} size ="4x" /> </h4></td>
-          <td><h4 align = "middle" > </h3>  </td>
-          <td> <h4 align = "middle" > </h3> </td>
-          <td> <h4 align = "right" ><FontAwesomeIcon icon= {faSmileBeam} size ="4x" /></h4>  </td>
+          <td><h4 align = "middle" > </h4>  </td>
+          <td> <h4 align = "middle" > </h4> </td>
+          <td> <h4 align = "right" ><FontAwesomeIcon icon= {faSmileBeam} size ="4x" /></h4 ></td>
 </table>
 </div>
       </div>
