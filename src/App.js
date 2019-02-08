@@ -4,6 +4,7 @@ import bob from "./bob";
 import cathy from "./cathy";
 import sam from "./sam";
 import placer from "./placer";
+import Slider from "./Slider";
 import './App.css';
 import {faSmileBeam} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -43,7 +44,8 @@ class AppIt extends React.Component {
         <Switch location={isApp ? this.previousLocation : location}>
    <Route exact path="/" component={Home} />
           <Route path="/chat" component={cathy} />
-          <Route path="/img/:id" component={Slider} />
+          <Route path ="/gallery" component = {Gallery}/>
+          <Route path="/Slider" component={Slider} />
           <Route path ="/placer" component= {placer}/>
         </Switch>
         {isApp ? <Route path="/img/:id" component={App} /> : null}
@@ -127,7 +129,9 @@ const Home = () => (
 </div>
 );
 
-const Slider= () => (
+
+
+const Gallery= () => (
   <div>
     {STUFF.map(i => (
       <Link
@@ -143,7 +147,6 @@ const Slider= () => (
     ))}
   </div>
 );
-
 const ImageView= ({ match }) => {
     const stuff = STUFF[parseInt(match.params.id, 10)];
   if (!stuff) {

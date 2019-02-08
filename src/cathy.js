@@ -7,6 +7,9 @@ import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import "./keyboard.css";
 import "./App.css";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSmileBeam} from "@fortawesome/free-solid-svg-icons";
+import {faFrown} from "@fortawesome/free-solid-svg-icons";
  
 class cathy extends Component {
 constructor(props, context) {
@@ -71,42 +74,21 @@ state = {
           <h1>Friend</h1>
           </ul>
       <div class="container">
-  <p></p>
-  <span class="time-right">11:00</span>
+  <p align = "center" > How Are You Feeling?</p>
 </div>
 <div>
-      <Slider
-        value={volume}
-        orientation="vertical"
-        onChange={this.handleOnChange}
-        />
-      <MDBContainer>
-        <MDBCol sm="4">
-          <MDBCard>
-            <MDBCardBody>
-              <MDBCardTitle>Choose your slider option</MDBCardTitle>
-              <hr />
-              <MDBRow className="my-4" center>
-                <MDBIcon
-                  far
-                  className="font-weight-bold blue-text mr-2 mt-1"
-                  icon="thumbs-down"
-                />
-            
-                <MDBIcon
-                  far
-                  className="font-weight-bold blue-text ml-2 mt-1"
-                  icon="thumbs-up"
-                />
+
                     <div className="my-5">
-      <label htmlFor="customRange1">How Are You Feeling?</label>
       <input type="range" className="custom-range" id="customRange1" />
+        <table>
+ <td> <h3 align = "left" ><FontAwesomeIcon icon= {faFrown} size ="4x" /> </h3></td>
+          <td><h3 align = "middle" > </h3>  </td>
+          <td> <h3 align = "middle" > </h3> </td>
+          <td> <h3 align = "right" ><FontAwesomeIcon icon= {faSmileBeam} size ="4x" /></h3>  </td>
+</table>
+
     </div>
-              </MDBRow>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBContainer>
+
         <input
           value={this.state.input}
           placeholder={"Start checking up on your friend!"}
