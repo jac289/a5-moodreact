@@ -49,13 +49,12 @@ class AppIt extends React.Component {
     );
   }
 }
-
-const IMAGES = [
-  { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
-  { id: 1, title: "Lime Green", color: "LimeGreen" },
-  { id: 2, title: "Tomato", color: "Tomato" },
-  { id: 3, title: "Seven Ate Nine", color: "#789" },
-  { id: 4, title: "Crimson", color: "Crimson" }
+const STUFF = [
+  { id: 0 },
+  { id: 1},
+  { id: 2 },
+  { id: 3},
+  { id: 4  }
 ];
 
 const Thumbnail = ({ color }) => (
@@ -68,7 +67,7 @@ const Thumbnail = ({ color }) => (
   />
 );
 
-const Image = ({ color }) => (
+const Stuff = ({ color }) => (
   <div
     style={{
       width: "100%",
@@ -92,7 +91,7 @@ const Home = () => (
     <td ><Link to="./index.html"><h2> Slider </h2></Link></td> 
   </tr>
   <tr>
-   <td width = "100%"> <li> <button class ="button button4"> <Link to="/gallery"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Bob</Link></button></li></td>
+   <td width = "100%"> <li> <button class ="button button4"> <Link to="bob"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Bob</Link></button></li></td>
  <td> </td> <td> </td>
     <td> <p align ="right"> 2/1/19 6:30 PM  </p> </td>
  </tr>
@@ -100,13 +99,13 @@ const Home = () => (
     <td>
 
 <li>
-<button class ="button button4"> <Link to="/cathy"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span> Cathy</Link></button> </li></td> 
+<button class ="button button4"> <Link to="cathy"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span> Cathy</Link></button> </li></td> 
 <td> </td> <td> </td>
 <td> <p align = "right"> 1/31/19 12:00 PM </p> </td> </tr> 
    <tr>
 <td>
       <li>
-        <button class ="button button4"> <Link to="./index.html"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Sam</Link></button></li></td>
+        <button class ="button button4"> <Link to="sam"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Sam</Link></button></li></td>
      <td> </td> <td> </td>
    <td> <p align = "right"> 1/30/19 9:00 PM </p> </td>
 </tr>
@@ -130,10 +129,9 @@ const Home = () => (
 </div>
 );
 
-
 const Gallery = () => (
   <div>
-    {IMAGES.map(i => (
+    {STUFF.map(i => (
       <Link
         key={i.id}
         to={{
@@ -150,22 +148,21 @@ const Gallery = () => (
 );
 
 const ImageView = ({ match }) => {
-    const image = IMAGES[parseInt(match.params.id, 10)];
-  if (!image) {
-    return <div>Image not found</div>;
+    const stuff = STUFF[parseInt(match.params.id, 10)];
+  if (!stuff) {
+    return <div> not found</div>;
   }
 
   return (
     <div>
-      <h1>{image.title}</h1>
-      <Image color={image.color} />
+      <h1>{stuff.title}</h1>
     </div>
   );
 };
 
 const App = ({ match, history }) => {
-  const image = IMAGES[parseInt(match.params.id, 10)];
-  if (!image) {
+  const stuff = STUFF[parseInt(match.params.id, 10)];
+  if (!stuff) {
     return null;
   }
   const back = e => {
@@ -196,8 +193,7 @@ const App = ({ match, history }) => {
           border: "2px solid #444"
         }}
       >
-        <h1>{image.title}</h1>
-        <Image color={image.color} />
+        <h1>{stuff.title}</h1> 
         <button type="button" onClick={back}>
           Close
         </button>
