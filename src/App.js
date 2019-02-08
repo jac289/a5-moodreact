@@ -41,8 +41,9 @@ class AppIt extends React.Component {
       <div>
         <Switch location={isApp ? this.previousLocation : location}>
           <Route exact path="/" component={Home} />
-          <Route path="/gallery" component={Gallery} />
-          <Route path="/img/:id" component={ImageView} />
+          <Route path="/" component={bob} />
+          <Route path="/gallery" component={cathy} />
+          <Route path = "/img" component= {bob}/>
         </Switch>
         {isApp ? <Route path="/img/:id" component={App} /> : null}
       </div>
@@ -91,7 +92,7 @@ const Home = () => (
     <td ><Link to="./index.html"><h2> Slider </h2></Link></td> 
   </tr>
   <tr>
-   <td width = "100%"> <li> <button class ="button button4"> <Link to="bob"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Bob</Link></button></li></td>
+   <td width = "100%"> <li> <button class ="button button4"> <Link to="chat"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Bob</Link></button></li></td>
  <td> </td> <td> </td>
     <td> <p align ="right"> 2/1/19 6:30 PM  </p> </td>
  </tr>
@@ -105,7 +106,7 @@ const Home = () => (
    <tr>
 <td>
       <li>
-        <button class ="button button4"> <Link to="sam"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Sam</Link></button></li></td>
+       <button class ="button button4"> <Link to="chat"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span> Sam</Link></button> </li></td> 
      <td> </td> <td> </td>
    <td> <p align = "right"> 1/30/19 9:00 PM </p> </td>
 </tr>

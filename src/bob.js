@@ -5,7 +5,7 @@ import "react-simple-keyboard/build/css/index.css";
 import "./keyboard.css";
 import "./App.css";
  
-class bob extends Component {
+class chat extends Component {
 state = {
     layoutName: "default",
     input: ""
@@ -80,5 +80,5 @@ state = {
   }
 }
  
-render(<bob/>, document.getElementById("root"));
-export default bob;
+render(<chat/>, document.getElementById("root"));
+export default chat;

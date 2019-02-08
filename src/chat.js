@@ -5,7 +5,7 @@ import "react-simple-keyboard/build/css/index.css";
 import "./keyboard.css";
 import "./App.css";
  
-class sam extends Component {
+class chat extends Component {
 state = {
     layoutName: "default",
     input: ""
@@ -52,17 +52,16 @@ state = {
 <div>
      
           <ul className="header">
-          <h1>Home</h1>
+          <h1>Bob</h1>
           </ul>
       <div class="container">
-  <img src="/w3images/bandmember.jpg" alt="Avatar"/>
-  <p>Hello. What's wrong!?</p>
+  <p>Hello. How are you today?</p>
   <span class="time-right">11:00</span>
 </div>
 <div>
         <input
           value={this.state.input}
-          placeholder={"Start checking up on your friend!"}
+          placeholder={"Start messaging your friend!"}
           onChange={e => this.onChangeInput(e)}
         />
         <Keyboard
@@ -75,9 +74,10 @@ state = {
 </div>
 
       
+      
     );
   }
 }
  
-render(<sam/>, document.getElementById("root"));
-export default sam;
+render(<chat/>, document.getElementById("root"));
+export default chat;

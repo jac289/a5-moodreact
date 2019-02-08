@@ -53,10 +53,9 @@ state = {
 <div>
      
           <ul className="header">
-          <h1>Home</h1>
+          <h1>Cathy</h1>
           </ul>
       <div class="container">
-  <img src="/w3images/bandmember.jpg" alt="Avatar"/>
   <p>Hello. What's wrong!?</p>
   <span class="time-right">11:00</span>
 </div>
