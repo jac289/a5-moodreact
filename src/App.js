@@ -52,11 +52,7 @@ class AppIt extends React.Component {
   }
 }
 const STUFF = [
-  { id: 0 },
-  { id: 1},
-  { id: 2 },
-  { id: 3},
-  { id: 4  }
+{ id: 0, title: "Dark Orchid", color: "DarkOrchid" },
 ];
 
 const Thumbnail = ({ color }) => (
@@ -90,7 +86,7 @@ const Home = () => (
 
   <tr>
     <td width = "20"><h2> Messages </h2></td><td> <h5> </h5> </td> <td> <h5> </h5> </td> 
-    <td ><Link to="./index.html"><h2> Slider </h2></Link></td> 
+    <td ><Link to="/slider"><h2> Slider </h2></Link></td> 
   </tr>
   <tr>
    <td width = "100%"> <li> <button class ="button button4"> <Link to="/chat"><span style={{alignSelf:'flex-end',padding: 20}}><FontAwesomeIcon icon= {faSmileBeam} size ="3x"/></span>Bob</Link></button></li></td>
@@ -137,8 +133,7 @@ const Slider= () => (
       <Link
         key={i.id}
         to={{
-          pathname: `/img/${i.id}`,
-          // this is the trick!
+          pathname: `/stuff`,
           state: { modal: true }
         }}
       >

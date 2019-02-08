@@ -1,12 +1,26 @@
 
 import React, { Component } from "react";
 import { render } from "react-dom";
+import { MDBRow, MDBContainer, MDBCard, MDBCol, MDBCardBody, MDBCardTitle, MDBCardImage, MDBIcon} from "mdbreact";
+import Slider from 'react-rangeslider';
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import "./keyboard.css";
 import "./App.css";
  
 class cathy extends Component {
+constructor(props, context) {
+    super(props, context)
+    this.state = {
+      volume: 0
+    }
+  }
+ 
+  handleOnChange = (value) => {
+    this.setState({
+      volume: value
+    })
+  }
 state = {
     layoutName: "default",
     input: ""
@@ -49,6 +63,7 @@ state = {
   };
 
   render() {
+    let { volume } = this.state
     return ( 
 <div>
      
@@ -56,10 +71,42 @@ state = {
           <h1>Friend</h1>
           </ul>
       <div class="container">
-  <p>Hello. What's wrong!?</p>
+  <p></p>
   <span class="time-right">11:00</span>
 </div>
 <div>
+      <Slider
+        value={volume}
+        orientation="vertical"
+        onChange={this.handleOnChange}
+        />
+      <MDBContainer>
+        <MDBCol sm="4">
+          <MDBCard>
+            <MDBCardBody>
+              <MDBCardTitle>Choose your slider option</MDBCardTitle>
+              <hr />
+              <MDBRow className="my-4" center>
+                <MDBIcon
+                  far
+                  className="font-weight-bold blue-text mr-2 mt-1"
+                  icon="thumbs-down"
+                />
+            
+                <MDBIcon
+                  far
+                  className="font-weight-bold blue-text ml-2 mt-1"
+                  icon="thumbs-up"
+                />
+                    <div className="my-5">
+      <label htmlFor="customRange1">How Are You Feeling?</label>
+      <input type="range" className="custom-range" id="customRange1" />
+    </div>
+              </MDBRow>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBContainer>
         <input
           value={this.state.input}
           placeholder={"Start checking up on your friend!"}
