@@ -16,7 +16,7 @@ import {faInfo} from "@fortawesome/free-solid-svg-icons";
 
 
 
-class ModalSwitch extends React.Component {
+class AppIt extends React.Component {
  
   previousLocation = this.props.location;
 
@@ -24,7 +24,7 @@ class ModalSwitch extends React.Component {
     const { location } = this.props;
     if (
       nextProps.history.action !== "POP" &&
-      (!location.state || !location.state.modal)
+      (!location.state || !location.state.app)
     ) {
       this.previousLocation = this.props.location;
     }
@@ -32,19 +32,19 @@ class ModalSwitch extends React.Component {
 
   render() {
     const { location } = this.props;
-    const isModal = !!(
+    const isApp = !!(
       location.state &&
-      location.state.modal &&
+      location.state.app &&
       this.previousLocation !== location
     ); 
     return (
       <div>
-        <Switch location={isModal ? this.previousLocation : location}>
+        <Switch location={isApp ? this.previousLocation : location}>
           <Route exact path="/" component={Home} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/img/:id" component={ImageView} />
         </Switch>
-        {isModal ? <Route path="/img/:id" component={Modal} /> : null}
+        {isApp ? <Route path="/img/:id" component={App} /> : null}
       </div>
     );
   }
@@ -163,7 +163,7 @@ const ImageView = ({ match }) => {
   );
 };
 
-const Modal = ({ match, history }) => {
+const App = ({ match, history }) => {
   const image = IMAGES[parseInt(match.params.id, 10)];
   if (!image) {
     return null;
@@ -185,7 +185,7 @@ const Modal = ({ match, history }) => {
       }}
     >
       <div
-        className="modal"
+        className="app"
         style={{
           position: "absolute",
           background: "#fff",
@@ -206,10 +206,10 @@ const Modal = ({ match, history }) => {
   );
 };
 
-const ModalGallery = () => (
+const AppDeploy = () => (
   <Router>
-    <Route component={ModalSwitch} />
+    <Route component={AppIt} />
   </Router>
 );
 
-export default ModalGallery;
+export default AppDeploy;
